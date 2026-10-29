@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f7f6" />
+    <meta name="description" content="Gyakorold az orvosi terminológia pontos gépelését, és kövesd a sebességedet." />
+    <title>LexiType — orvosi gépelésgyakorló</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./stats.js" defer></script>
+    <script src="./texts.js" defer></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="LexiType főoldal">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M16 3.5 27 9.8v12.4L16 28.5 5 22.2V9.8L16 3.5Z" stroke="currentColor" stroke-width="1.7"/><path d="M10 16h12M16 10v12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </span>
+          <span class="brand-copy"><strong>LexiType</strong><small>CLINICAL TYPING LAB</small></span>
+        </a>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <div class="eyebrow"><span class="eyebrow-line"></span> ORVOSI TERMINOLÓGIA</div>
+          <h1 id="page-title">A pontosság<br class="mobile-break" /> <span>életet ír.</span></h1>
+          <p>Gyakorold a klinikai dokumentáció legfontosabb kifejezéseit. Figyeld a tempód, javítsd a hibáidat, és fejlődj minden körrel.</p>
+        </section>
+
+        <section class="practice-card" aria-labelledby="practice-title">
+          <div class="practice-topline">
+            <div class="section-label"><span class="label-icon" aria-hidden="true">✳</span> GÉPELÉSI GYAKORLAT</div>
+            <div class="round-state" id="round-state"><span class="state-dot"></span><span id="state-label">KÉSZEN ÁLL</span></div>
+          </div>
+
+          <div class="prompt-heading">
+            <div>
+              <div class="micro-label">KÖVETKEZŐ RÉSZLET</div>
+              <h2 id="practice-title">Gépeld le pontosan</h2>
+            </div>
+            <button class="icon-button" id="skip-button" type="button" aria-label="Másik szövegrészlet választása" title="Másik szövegrészlet">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16.4 8A6.5 6.5 0 0 0 5.1 5.3L3.5 7M3.5 7V3.8M3.5 7h3.2M3.6 12a6.5 6.5 0 0 0 11.3 2.7l1.6-1.7m0 0v3.2m0-3.2h-3.2" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Másik szöveg</span>
+            </button>
+          </div>
+
+          <button class="text-stage" id="text-stage" type="button" aria-label="Fókusz a gépeléshez">
+            <span class="text-stage-hint" id="text-stage-hint">KATTINTS IDE, VAGY KEZDJ EL GÉPELNI</span>
+            <span class="prompt-text" id="prompt-text" aria-hidden="true"></span>
+          </button>
+          <textarea class="typing-input" id="typing-input" aria-label="Gépeld le a klinikai szöveget" autocomplete="off" autocapitalize="off" spellcheck="false" inputmode="text"></textarea>
+
+          <div class="practice-controls">
+            <div class="focus-message" id="focus-message"><span class="keyboard-icon" aria-hidden="true">⌨</span><span>Kattints a szövegre vagy kezdj el gépelni.</span></div>
+            <button class="focus-button" id="focus-button" type="button"><span class="focus-button-icon" aria-hidden="true">⌖</span><span>Fókusz vissza</span></button>
+          </div>
+
+          <div class="metrics" aria-live="polite" aria-atomic="true">
+            <div class="metric metric-primary"><span class="metric-label">TEMPÓ</span><div><strong id="wpm-value">0</strong><span class="metric-unit">WPM</span></div><span class="metric-caption">szó / perc</span></div>
+            <div class="metric"><span class="metric-label">PONTOSSÁG</span><div><strong id="accuracy-value">100</strong><span class="metric-unit">%</span></div><span class="metric-caption">helyes karakter</span></div>
+            <div class="metric"><span class="metric-label">ELTELT IDŐ</span><div><strong id="time-value">00:00</strong></div><span class="metric-caption">perc:másodperc</span></div>
+            <div class="metric"><span class="metric-label">HIBÁK</span><div><strong id="errors-value">0</strong></div><span class="metric-caption">javítás után is számít</span></div>
+          </div>
+
+          <div class="result-panel" id="result-panel" hidden>
+            <div class="result-icon" aria-hidden="true">✓</div>
+            <div class="result-copy"><div class="micro-label">KÖR TELJESÍTVE</div><h3 id="result-title">Szép munka!</h3><p id="result-description">Az eredményed elmentettük.</p></div>
+            <button class="primary-button" id="retry-button" type="button">Új próba <span aria-hidden="true">↗</span></button>
+          </div>
+        </section>
+
+        <section class="history-card" aria-labelledby="history-title">
+          <div class="history-header">
+            <div>
+              <div class="section-label"><span class="label-icon chart-label-icon" aria-hidden="true">↗</span> FEJLŐDÉSI NAPLÓ</div>
+              <h2 id="history-title">Minden kör számít.</h2>
+            </div>
+            <div class="chart-legend"><span class="legend-dot"></span> WPM <span id="attempt-count">0 / 10 próba</span></div>
+          </div>
+          <div class="chart-wrap"><canvas id="history-chart" role="img" aria-label="Az utolsó tíz gépelési próba WPM vonaldiagramja"></canvas><p class="empty-chart" id="empty-chart">Az első próba után itt jelenik meg a fejlődésed.</p></div>
+          <div class="history-footer"><span>UTOLSÓ 10 PRÓBA</span><span class="history-status"><span class="live-dot"></span> HELYBEN MENTVE</span></div>
+        </section>
+      </main>
+
+      <footer class="footer"><span>LEXITYPE <span class="footer-dot">·</span> ORVOSI GÉPELÉSGYAKORLÓ</span><span>Gyakorolj figyelemmel. Dokumentálj pontosan.</span></footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "umfst-p09-geplelo",
+  "version": "1.0.0",
+  "description": "Orvosi terminológia gépelés-sebesség mérő",
+  "private": true,
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  }
+}
