@@ -4,7 +4,7 @@ Böngészőben futó, magyar nyelvű gépelés-sebesség mérő klinikai kifejez
 
 ## Élő demó
 
-
+https://krisztianb9.github.io/umfst-p09-geplelo/
 
 ## Képletek
 
